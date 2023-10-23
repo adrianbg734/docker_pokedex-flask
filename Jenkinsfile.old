@@ -2,11 +2,11 @@ pipeline {
     agent any
     environment{
         DOCKERHUB_CREDENCIALS = credentials ('dockerhub')
-        RepoDockerHub = 'christianscha'
+        RepoDockerHub = 'adrian734'
         NameContainer = 'pokedex-flask'
     }
 
-    stages {
+ /*   stages {
         stage('Build'){
             steps{
                 sh "docker build -t ${env.RepoDockerHub}/${env.NameContainer}:${env.BUILD_NUMBER} ."
@@ -36,5 +36,5 @@ pipeline {
                 sh "docker logout"
             }
         }
-    }
+    }*/
 }
