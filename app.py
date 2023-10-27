@@ -12,7 +12,7 @@ fa = FontAwesome(app)
 @app.route('/')
 def index():
 	pokemon = [" ".join(i["name"].split("-")).title() for i in requests.get(f'https://pokeapi.co/api/v2/pokemon/?limit=-1').json()["results"]]
-	return render_template('index.html', pokemon=pokemon)
+	return render_template('index.html', **locals())
 
 @app.route('/<pokemon>')
 def pokemon(pokemon):
